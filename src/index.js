@@ -5,7 +5,13 @@ import connectDB from './database/db.js';
 
 const app = express();
 
-connectDB();
+connectDB()
+.then(()=>{
+    console.log("MongoDB connected successfully !!!")
+})
+.catch((error)=>{
+    console.log("MongoDB connection failed !!!: ", error)
+});
 
 app.get('/', (req, res)=>{
     res.send("Hello World")
