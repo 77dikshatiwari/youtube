@@ -25,7 +25,7 @@ if(password.length <6){
 if(email.includes("@") === false){
     throw new ApiError(402, "Please provide a valid email")
 }
-const existedUser = User.findOne({
+const existedUser = await User.findOne({
     $or: [{username} , {email}]
 })
 if(existedUser){
@@ -36,9 +36,12 @@ const coverImageLocalPath = req.files?.coverImage[0]?.path;
 
 if(!avatarLocalPath || !coverImageLocalPath){
     throw new ApiError(409, "Please provide both avatar and cover image")
-}
+}   
+
 const avatar = await uploadOnCloudinary(avatarLocalPath)
 const coverImage = await uploadOnCloudinary(coverImageLocalPath)
+// console.log(avatar.url);
+
 if(!avatar || !coverImage){
     throw new ApiError(409, "Failed to upload avatar")
 }

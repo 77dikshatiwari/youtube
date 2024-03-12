@@ -3,6 +3,8 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 //Routes import
 import userRoutes from "./routes/userRoutes.js";
+// import dotenv from "dotenv";
+// dotenv.config({path: "./config.env"}); //configuring environment variables
 
 const app = express();
 
