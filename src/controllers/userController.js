@@ -10,7 +10,8 @@ const registerUser = asyncHandler(async (req, res) => {
 //   2.validate info, 3.0 check if user already exists or not 3.1 check for files (img and avatar) 3. encrypt, 4. save in db and tokens 5. sucess or failure response
 
  const {fullName, username, email, password} = req.body
- console.log(fullName, email, username, password);
+//  console.log(fullName, email, username, password);
+//  console.log(req.body);
 //  if(fullName === "" ){
 //     res.status().json({})
 //  }
@@ -34,6 +35,13 @@ if(existedUser){
 const avatarLocalPath = req.files?.avatar[0]?.path;
 const coverImageLocalPath = req.files?.coverImage[0]?.path;
 
+// if coverImage is not provided then check this way
+// if(req.files && Array.isArray(req.files.coverImage) && req.files.coverImage.length > 0 ){
+//     coverImageLocalPath = req.files.coverImage[0].path
+// }
+
+
+// console.log(req.files)
 if(!avatarLocalPath || !coverImageLocalPath){
     throw new ApiError(409, "Please provide both avatar and cover image")
 }   
