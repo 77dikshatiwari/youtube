@@ -5,7 +5,7 @@ import cookieParser from "cookie-parser";
 import userRoutes from "./routes/userRoutes.js";
 import commentRoutes from "./routes/commentRoutes.js";
 import dashboardRoutes from "./routes/dashboardRoutes.js";
-import healthRoutes from "./routes/healthRoutes.js";
+import healthRoutes from "./routes/healthcheckRoutes.js";
 import likeRoutes from "./routes/likeRoutes.js";
 import playlistRoutes from "./routes/playlistRoutes.js";
 import subscriptionRoutes from "./routes/subscriptionRoutes.js";

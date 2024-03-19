@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { verifyJWT } from "../middleware/authMiddleware.js"
+import { verifyJWT } from "../middlewares/authMiddleware.js"
 import { subscribeToAChannel, unsubscribeFromAChannel, getChannelSubscriber, getSubscribedChannels } from "../controllers/subscriptionController.js"
 
 const router = Router()

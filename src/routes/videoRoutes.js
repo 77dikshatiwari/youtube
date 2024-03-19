@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { verifyJWT } from "../middleware/authMiddleware.js"
+import { verifyJWT } from "../middlewares/authMiddleware.js"
 import { getAllVideos, publishAVideo, getVideoById, updateVideo, deleteVideo, togglePublishStatus } from "../controllers/videoController.js"
 
 const router = Router()
